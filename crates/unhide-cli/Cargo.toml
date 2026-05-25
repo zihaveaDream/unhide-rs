@@ -1,0 +1,14 @@
+[package]
+name = "unhide-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "unhide"
+path = "src/main.rs"
+
+[dependencies]
+libc.workspace = true
+clap.workspace = true
+unhide-core = { path = "../unhide-core" }

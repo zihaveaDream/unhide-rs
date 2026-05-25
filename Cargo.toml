@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/unhide-core",
+    "crates/unhide-cli",
+    "crates/unhide-gui",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+authors = ["Yago Jesus", "Patrick Gouin", "Rust port"]
+repository = "https://github.com/YJesus/Unhide"
+
+[workspace.dependencies]
+libc = "0.2"
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 2
+lto = true
+strip = true
