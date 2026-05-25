@@ -62,6 +62,18 @@ The original shipped four programs; here they are subcommands of one binary:
 Download the archive for your platform from the [Releases](https://github.com/zihaveaDream/unhide-rs/releases)
 page, unpack it, and run `./unhide`. Or build from source (below).
 
+**Which Linux build?**
+
+| asset | linking | use it for |
+|---|---|---|
+| `…-linux-musl` (x86_64 / aarch64 / armv7 / i686 / riscv64) | **static** | servers, older distros, anything — no glibc dependency (**recommended**). CLI only. |
+| `…-linux-gnu` (x86_64) | dynamic glibc | recent desktops; **also ships the GUI** (`unhide-gui`). Needs a recent glibc. |
+
+> If a `gnu` build prints `GLIBC_2.xx not found`, your system's glibc is too old
+> (e.g. CentOS 7/8) — use the **musl** build instead: it is fully static and runs
+> anywhere. The GUI cannot be statically linked, so it ships only in the `gnu`
+> desktop archive.
+
 ## Quick start
 
 ```sh
